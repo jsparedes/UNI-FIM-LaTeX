@@ -1,0 +1,125 @@
+%% -*- coding: utf-8; -*-
+
+\documentclass[12pt,a4paper,oneside,english,spanish]{tesis} %% Llama a tesis.cls
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel} %% reemplaza "cuadro" por "tabla"
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{textcomp}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\graphicspath{{images/}}
+
+%%%%%%%%%  Silabeo de palabras:  %%%%%%%%%%%%
+\hyphenation{con-fi-gu-ra-cio-nes}         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%% Comandos para reducir errores, pero si no se ponen igual se compila%%%%%%%%%%%%%%%%%%%%%
+\makeatletter                               																											 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands. 																			 %%
+%% Because html converters don't know tabularnewline																			 				 %%
+\providecommand{\tabularnewline}{\\} 																			 												 %%
+\floatstyle{ruled}																			 																					 %%
+\newfloat{algorithm}{tbp}{loa}[chapter]																			 											 %%
+																			 																														 %%
+%\floatname{algorithm}{Algorithm}																			 														 %%
+\floatname{algorithm}{ } %Con esta linea ya no aparece Algorithm																	 %%
+																			 																			 											 %%
+\DeclareRobustCommand{\greektext}{%
+  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}}
+\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+\DeclareFontEncoding{LGR}{}{}
+\DeclareTextSymbol{\~}{LGR}{126}
+\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
+  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
+  \makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newenvironment{lyxcode}
+{\par\begin{list}{}{
+\setlength{\rightmargin}{\leftmargin}
+\setlength{\listparindent}{0pt}% needed for AMS classes
+\raggedright
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\normalfont\ttfamily}%
+ \item[]}
+{\end{list}}
+
+\makeatother
+
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset -1in
+\voffset -1in
+\topmargin 0.5cm
+\headheight 1cm
+\headsep 1.5cm
+\footskip 1cm
+\oddsidemargin 4cm
+\textwidth 14.5cm
+\textheight 23.2cm
+\parindent 5ex
+
+\university{UNIVERSIDAD NACIONAL DE INGENIERÍA}
+\faculty{FACULTAD DE INGENIERÍA MECÁNICA}
+\title{Y}
+\title{PLANIFICACIÓN DE TRAYECTORIAS PARA ROBOTS MÓVILES EN ENTORNOS NO DINÁMICOS EMPLEANDO EL ALGORITMO RRT}
+\logo{uni_logo.png}
+\degree{INGENIERO MECATRÓNICO}
+\author{PAREDES MERINO, JORGE SALVADOR}
+\promotion{2010-II}
+\place{LIMA - PERÚ}
+\date{2012}
+
+\addto\captionsenglish{
+\renewcommand\bibname{BIBLIOGRAFÍA}
+\renewcommand\appendixname{APÉNDICE}
+}
+
+
+\begin{document}
+\pagestyle{empty}
+\maketitle
+\input{dedicatoria}
+\input{agradecimientos}
+
+\renewcommand\contentsname{TABLA DE CONTENIDOS}
+\renewcommand\listfigurename{LISTA DE FIGURAS}
+
+
+\pagestyle{headings}
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\doublespacing
+\newpage
+\addcontentsline{toc}{chapter}{\hspace{14pt} \bf PRÓLOGO \hfill}
+\input{prologo}
+\input{cap1}
+\input{cap2}
+
+\newpage
+\addcontentsline{toc}{chapter}{\hspace{14pt} \bf CONCLUSIONES \hfill}
+\input{conclusiones}
+\newpage
+\addcontentsline{toc}{chapter}{\hspace{14pt} \bf BIBLIOGRAFÍA \hfill}
+\bibliographystyle{unsrt}
+\bibliography{referencias}
+
+\appendix
+\input{apA}
+\end{document}

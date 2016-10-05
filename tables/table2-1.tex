@@ -1,0 +1,28 @@
+% -*- coding: utf-8; -*-
+\begin{table}[H]
+\centering
+\begin{tabular}{l>{\raggedright}p{4in}} \toprule
+Elemento & \centering{}Descripción\tabularnewline\midrule
+$C$ & es el conjunto de todas las configuraciones posibles del entorno,
+es decir, los obstáculos y las configuraciones libres.\tabularnewline
+$C_{free}$ & Subconjunto de C, configuraciones libres de obstáculos existentes.\tabularnewline
+$R$ & Indicador de ponderación de proximidad al punto deseado. La distancia
+euclidiana es la más utilizada.\tabularnewline
+$q_{init}$ & Configuración inicial\tabularnewline
+$q_{fin}$ & Configuración que se desea alcanzar\tabularnewline
+$q_{rand}$ & Configuración aleatoria dentro del espacio $C_{free}$ \tabularnewline
+$q_{near}$ & Es la conguración mas proxima a $q_{rand}$ , en el sentido denido
+por R, de entre las existentes en un árbol. Se evalúa con el indicador
+de ponderación.\tabularnewline
+$q_{new}$ & Configuración a añadir al árbol.\tabularnewline
+$e$ & Longitud de segmento de crecimiento. Geométricamente, es la distancia
+entre un punto del árbol y el siguiente con el que esta conectado.\tabularnewline
+$Arbol$ & Estructura de datos.\tabularnewline
+\bottomrule
+\end{tabular}
+
+\caption{Elementos de una RRT}
+
+
+\label{Flo:cnomen}
+\end{table}

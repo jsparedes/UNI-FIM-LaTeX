@@ -1,0 +1,80 @@
+% -*- coding: utf-8; -*-
+\chapter{ALGORITMO RRT}
+
+
+\section{Elementos}
+
+
+
+El algoritmo RRT original se basa en la construcción de un árbol de
+configuraciones que crece buscando a partir de un punto origen. Para
+entender el algoritmo se usará la nomenclatura expresada en el cuadro
+
+
+\input{tables/table2-1}
+
+
+\newpage{}
+
+
+\section{Pseudocódigo}
+
+El algoritmo viene expresado por:
+
+\medskip{}
+
+
+%
+\begin{algorithm}[H]
+\begin{lyxcode}
+\textbf{Función:~RRT(}$\mathbf{q}_{\mathbf{ini}}$\textbf{,}~$\mathbf{K{}_{max}}$\textbf{,~$e$)}
+
+1.~$Arbol[0]$~=~$q_{init}$;
+
+2.\textbf{~for}~$K=1$~\textbf{to}~$K{}_{max}$
+
+3.~$q_{rand}$~=~Configuración\_Aleatoria();
+
+4.~$q_{near}$=~Elemento\_más\_cercano~($Arbol$,~$q_{rand}$)
+
+5.~$q_{new}$=~Nuevo\_elemento~($q_{rand}$,$q_{near}$,~$e$)
+
+6.\textbf{~end~for}
+
+7.~Devuelve~$Arbol$;~\medskip{}
+
+
+\textbf{Función:~Nuevo\_elemento}($q_{rand}$,$q_{near}$,~$e$)
+
+1.~$u_{qnear-qrand}=\left(q_{rand}-q_{near}\right)/\left\Vert q_{rand}-q_{near}\right\Vert $;
+
+2.\textbf{~}$q_{new}=q_{near}+e.u_{qnear-qrand}$;
+
+3.~Devuelve~$q_{new}$;
+\end{lyxcode}
+\caption{Algoritmo RRT}
+
+\end{algorithm}
+
+
+\bigskip{}
+
+
+El pseudocódigo de RRT es explicado como sigue:
+
+
+\section{Algoritmos evolucionados de RRT}
+
+
+\subsection{RRT Bidireccional Básica}
+
+
+\subsection{RRT Ext-Ext}
+
+
+\subsection{RRT Ext-Con}
+
+
+\section{Sistemas no holónomos}
+
+\selectlanguage{english}%
